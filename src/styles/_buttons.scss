@@ -1,0 +1,30 @@
+/*  
+  Buttons  
+*/
+
+.control-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+button,
+.button {
+  border: 2px solid lighten($grey, 90%);
+  background: none;
+  flex-basis: 48%;
+  display: inline-block;
+  line-height: 2;
+  text-decoration: none;
+  padding: 5px;
+  text-align: center;
+  font-size: 15px;
+  color: $primary;
+  transition: all 0.2s;
+  box-sizing: padding-box;
+
+  &:hover,
+  &:focus {
+    border-color: $primary;
+    outline: 0;
+  }
+}

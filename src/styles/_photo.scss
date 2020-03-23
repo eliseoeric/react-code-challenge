@@ -1,0 +1,94 @@
+.single-photo {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  background: white;
+
+  .grid-figure {
+    margin: 0 ($unit * 4) 0 0;
+    border: 0;
+    flex: 1 0 60%;
+    max-width: 60%;
+    padding: $unit;
+  }
+
+  .comments {
+    flex: 1 0 40%;
+    max-width: 40%;
+  }
+
+  .grid-photo {
+    width: 100%;
+    margin: 0;
+  }
+
+  .image-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.grid-photo {
+  width: calc(100% + #{($unit * 6)});
+  margin-left: -#{($unit * 3)};
+  margin-top: -#{($unit * 3)};
+  max-width: none;
+}
+
+.grid-photo-wrap {
+  position: relative;
+}
+
+
+.image-link {
+
+  &:hover {
+    .image-overlay {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.image-overlay {
+  position: absolute;
+  top: -#{($unit * 3)};
+  left: -#{($unit * 3)};
+  background: rgba($dark-grey, 0.6);
+  width: calc(100% + #{($unit * 6)});
+  height: calc(100% + #{($unit * 3)});
+  visibility: hidden;
+  opacity: 0;
+}
+
+.photo-avatar {
+  max-width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: 1;
+  img {
+    max-width: 100%;
+  }
+}
+
+.photo-meta {
+  position: absolute;
+  left: $unit * 1.5;
+  bottom: $unit * 1.5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.photo-author {
+  flex: 1;
+  margin-left: $unit * 1.5;
+  h4 {
+    color: $white;
+    font-size: $unit * 2;
+    line-height: 1.5;
+  }
+}
