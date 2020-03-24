@@ -9,7 +9,7 @@ concerns should be emailed to [Eric Eliseo](mailto:eric.eliseomartin@sosi.com) o
 To install the project please clone the repo using git, or download using the `Clone or download` button above.
 
 ```bash
-git clone https://github.com/eliseoeric/instagram-code-challenge
+git clone https://github.com/eliseoeric/react-code-challenge
 ```
 
 Next, change into the directory using your terminal and install the required packages:
