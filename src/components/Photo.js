@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import Overlay from './Overlay.js';
 
-const Photo = ({ post, i, comments }) => {
+const Photo = ({ post, i, comments, props, incrementLikes }) => {
+
+  const increment = (event) => {
+    event.preventDefault();
+    
+    const likes = post.likes + 1;
+    incrementLikes(likes);
+  }
+  
 
   return (
     <figure className='grid-figure'>
@@ -10,9 +19,11 @@ const Photo = ({ post, i, comments }) => {
         <Link to={`/view/${post.code}`} className={'image-link'}>
           <img src={post.display_src} alt={post.caption} className='grid-photo' />
 
-          <div className={'image-overlay'}>
-            {/* author meta data and avatar here */}
+          {/* Edited */}
+          <div className={'image-overlay'}>    
+              <Overlay post={post} {...props} ></Overlay>
           </div>
+
         </Link>
 
         <TransitionGroup>
@@ -25,7 +36,7 @@ const Photo = ({ post, i, comments }) => {
       <figcaption>
         <p>{post.caption}</p>
         <div className='control-buttons'>
-          <button className='likes'>
+          <button className='likes' onClick={increment}>
             &hearts; {post.likes}
           </button>
           <Link className='button' to={`/view/${post.code}`}>

@@ -6,6 +6,7 @@ import Single from './Single';
 import PhotoGrid from './PhotoGrid';
 
 const Main = (props) => {
+
   return (
     <div>
       <h1>

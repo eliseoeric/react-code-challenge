@@ -4,7 +4,7 @@ function posts(state = [], action) {
     //   // logic for action here
     //   // make sure a new object or array is returned
     // }
-
+    
     default: {
       return state;
     }
